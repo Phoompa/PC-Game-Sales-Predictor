@@ -1,0 +1,6 @@
+# Preface {.unnumbered}
+
+The purpose of this project is to determine which model is the most accurate at predicting how many individuals own a game on Steam based on various characteristics such as genre, tags, categories, reviews, platform support, english support, average and median play time, developer and publisher. The following pages will outline the process of exploring the dataset, feature selection, model selection, model training, model interpretation, and the final results.
+
+
+

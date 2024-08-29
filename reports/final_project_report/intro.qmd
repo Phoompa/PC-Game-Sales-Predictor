@@ -1,0 +1,12 @@
+# Introduction to Project
+
+## Overview
+
+In this project, machine learning models were trained on data gathered from SteamSpy: a service that hosts information about games from the Steam platform. From this dataset, information including genres, tags, categories, reviews, platform support, english support, average and median play time, developer and publisher were used. On Steam, a tag is a descriptor of a genre, feature or content of a video game that can be added to help customers find games they might enjoy. This information will be important when training machine learning models on, because it will help determine the most popular features that well-selling games provide.
+
+Appropriate data analysis and pre-processing were performed to get appropriate data for training with various machine learning models. The code of this project was organized in a way to make training different models efficient and without requiring change to previous data or code.
+
+
+## Objectives of Project
+
+The objective of this project is to train an appropriate machine learning model to be able to predict the relative success of a video game based on its genre, categories, and features. This tool will be able to help people who make video games by exploring the popular genres and features that popular games offer. Using available data, the trained machine learning models will predict the number of owners of a game based on the categories mentioned above. 

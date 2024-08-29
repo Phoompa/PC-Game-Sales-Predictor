@@ -1,0 +1,60 @@
+# Methodology
+
+## Platform and Machine Configurations Used
+A Visual Studio Code environment was used with the Anaconda distribution. Every python script was run on a local machine using the environment. 
+
+## Data Split
+
+Data splitting was performed on the final processed dataset, with a test size of 0.2 and a random state 42. 
+
+## Model Planning
+
+Different machine learning regression models were used when training on the dataset. The small size of the data allowed us to test multiple models efficiently. The models used in our testing were:
+
+- Logistic regression
+
+- Linear discriminant analysis
+
+- K-Nearest Neighbour
+
+- Decision trees
+
+- Lasso regression
+
+- Gaussian Naive Bayes 
+
+All models were tested to find the most accurate model. 
+
+## Model Training: 
+
+The models were trained on the data with appropriate parameters. Different feature selection techniques using sklearn were used to find the best data for use with the models: variance threshold selection and univariate feature selection. Models were fitted and trained to predict for the "owners" metric, an estimated number of owners of the game on the platform.
+
+## Model Evaluation
+
+Model evaluation was done using four statistics:
+
+- r2 score
+
+- f1 score
+
+- recall
+
+- precision
+
+After training all of the models, they were all evaluated using those statistics for comparison.
+
+## Model Optimization
+
+Optimization was performed during the data processing and feature selection phases.
+
+## Final Model Building
+
+Comparison graphs were plotted after all model evaluation was done:
+
+![r2 / accuracy](../figures/Model_r2_scores.png){width=600}
+
+![f1 scores](../figures/Model_f1_scores.png){width=600}
+
+![recall](../figures/Model_recall_scores.png){width=600}
+
+![precision](../figures/Model_precision_scores.png){width=600}

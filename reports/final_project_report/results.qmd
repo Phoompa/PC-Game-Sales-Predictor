@@ -1,0 +1,79 @@
+# Results
+
+To compare different machine learning models in the results section, here are some steps to consider:
+
+- Accuracy vs r2 score: In the case of our data the variable we are predicting comes in set sizes, so both regression and classification models were appropriate to use. Therefore, r2 score was required for regression models and accuracy was required for classification models. This difference needs to be kept in mind with the comparisons.
+
+- Computation time: With the data used in this project, pre-processing took relatively significant computation resources, however model fitting was efficient and could be done in a few minutes. For the purpose of this project, all models can be considered as similar in computation time. 
+
+- Precision and recall: The rate of positive indications and the rate of true positives are not as significant as accuracy because they are not critical for the task. Therefore accuracy or r2 score must be considered more important than precision and recall.
+
+## Description of the Models
+
+Models used in this project:
+
+- Logistic Regression - a regression model that estimated the parameters of a logistic model according to the trained data. This model was included for the sake of comparison with more appropriate models.
+
+- Linear Discriminant Analysis - A machine learning model that is used to find a linear combination of parameters that separate between data. It is similar to principal component analysis. 
+
+- K-Nearest Neighbour - A machine learning model that determines distinctions between classes by using the distance between their "neighbours" of the same type. 
+
+- Decision Trees - A machine learning method where a custom tree structure is mathematically made in a top-down, greedy approach. Important parts of this structure are: root node, decision nodes, terminal nodes, splitting policy.
+
+- Lasso Regression - A regulairzation technique that is used with regression methods to make a more accurate prediction. LASSO stands for Least Absolute Shrinkage and Selection Operator. 
+
+- Gaussian Naive Bayes - Also known as GNB, it is a machine learning technique that uses the Gaussian distribution. It assumes that class densities are normally distributed and uses that information to predict. 
+
+## Performance Metrics
+
+Describe the performance metrics used to evaluate the models, such as RMSE, MSE, accuracy, precision, recall, F1 score, or area under the receiver operating characteristic curve (AUC-ROC), etc based on the model class.
+
+- R2 or accuracy: Used to determine the proportion of correct predictions the model made.
+$$Accuracy = {TP + TN \over TP + TN + FP + FN} $$
+$$R2 = {1 - {Sum Of Squares Of Residuals \over Total Sum Of Squares}} $$
+
+- f1 score: A measure of accuracy that combines the precision and recall scores of a model. 
+$$F1 = {2 * precision * recall \over precision + recall} $$
+
+- Recall: The proportion of positives that were identified correctly. It is important when identifying positives is critical.
+$$Recall = {True Positives \over True Positives + False Negatives}$$
+
+- Precision: The proportion of true positives (accurate, positive guesses) over all positives that the model predicted.  The proportion of It is significant when positive predictions have to be accurate, and avoiding false positives is necessary.
+$$Precision = {True Positives \over True Positives + False Positives}$$
+
+## Results Table
+
+| Model               | R2 / Accuracy | F1     | Recall | Precision |
+|---------------------|---------------|--------|--------|-----------|
+| Logistic Regression | 0.2421        | 0.2918 | 0.2421 | 0.4976    |
+| LDA                 | 0.4307        | 0.2949 | 0.4307 | 0.2642    |
+| KNN Regressor       | 0.5386        | 0.3071 | 0.2282 | 0.6281    |
+| KNN Classifier      | 0.5786        | 0.5603 | 0.5786 | 0.5520    |
+| DT Regressor        | 0.6623        | 0.5525 | 0.5501 | 0.5562    |
+| DT Classifier       | 0.5320        | 0.5345 | 0.5320 | 0.5383    |
+| Gaussian NB         | 0.4307        | 0.2949 | 0.4307 | 0.2642    |
+|---------------------|---------------|--------|--------|-----------|
+| Mean                | 0.4879        | 0.4051 | 0.4275 | 0.4715    |
+| Std                 | 0.1254        | 0.1249 | 0.1325 | 0.1359    |
+
+## Interpretation of the Results 
+
+The Decision Tree model appears to have the best performance out of all models that were tested. When running the tests multiple times, the KNN model would sometimes achieve a greater accuracy than the Decision Tree model. For the end result, Decision Tree was chosen as the best model for the objective. 
+
+The final model did not achieve the specified accuracy, this could be due to multiple reasons. One potential source of error was insufficient parameter tuning and cross validation. Basic hyper-parameter tuning was experimented with in the early stages of the project, but did not yield significant results so it was not included in the final models. Another potential source of error is the data that was used. Number of owners was the metric that was predicted by the machine learning models. Because Steam sales for video games are not publicly avaialable, SteamSpy provides an estimated metric of owners as a range between two numbers (e.g. 20,000-50,000). As this metric is just an estimate and not an accurate report, the accuracy of the models is lower than if real sales numbers could be used. The majority of the games in the dataset are niche, small, or otherwise not popular, public sales data could not be found for them, but only for the larger games. This would not have helped for the purpose of our project, so data for larger games was not included. Another potential source of error is how the "owners" metric was calculated. Different predictions of the number of owners such as minimum, mean, etc. could have potentially provided greater accuracy.
+
+## Visualization
+
+see @chapter-3.7 for visualization of the model reports.
+
+## Sensitivity Analysis
+
+
+
+Various attempts were made at changing certain aspects of the process in order to obtain the best performance metrics. For example, entries in the data set were filtered based on their release date and the result was chosen based on performance and relevance to the current market. Numerous attempts were made at changing the value of SelectKBest however, the current value was found to yield the best performance metrics. 
+
+
+
+
+
+
